@@ -1,5 +1,6 @@
 package com.demo.model;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
@@ -11,6 +12,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -53,6 +55,10 @@ public class User {
 	joinColumns =  @JoinColumn(name = "userId", referencedColumnName = "userId")
     ,            inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "roleId"))
 	private Set <Role> roles;
+	
+	@OneToMany(mappedBy = "user")
+	private Set<Item> item= new HashSet<>();
+	
 	
 	
 /*

@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name="product")
+@Table(name="productTable")
 
 public class Product {
 
@@ -66,10 +66,10 @@ public class Product {
 	
 	@NotNull
 	@Column(length =50)
-	@Size(max = 50)
+	@Size(max = 50,min=2, message = "Must be between {max} and {min} ")
 	private String productName;
 	
-	@Digits(fraction = 2, integer = 10, message="Please enter numbers")
+	@Digits(fraction = 2, integer = 10, message="Please enter numbers, must be between ")
 	private float price;
 	
 	

@@ -7,4 +7,5 @@ import com.crud.model.Product;
 public interface ProductRepo extends JpaRepository<Product, Long> {
 
 	
+	
 }

@@ -10,8 +10,12 @@ public class DemoController {
 
 	@GetMapping("/name")
 	public String getName() {
-		return "Karan";
+		return "Ajay";
 		
+	}
+	@GetMapping("/address")
+	public String getAddress() {
+		return "Mumbai";
 	}
 	
 	

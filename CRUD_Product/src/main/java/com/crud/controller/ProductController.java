@@ -3,6 +3,8 @@ package com.crud.controller;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -43,7 +45,7 @@ public class ProductController {
 	
 	//save product
 	@PostMapping("/save")
-	public ResponseEntity<Product> saveProduct( @RequestBody Product product){
+	public ResponseEntity<Product> saveProduct( @Valid @RequestBody Product product){
 		
 		return new ResponseEntity<Product>
 		

@@ -9,7 +9,9 @@ public interface DateDemo {
 	public static void main(String[] args) {
 		
 		LocalTime time = LocalTime.now();
+		
 		System.out.println("Time ="+time);
+		
 		
 		LocalDate date = LocalDate.now();
 		System.out.println(date);
@@ -23,7 +25,11 @@ public interface DateDemo {
 		
 		LocalDateTime localDateTime = LocalDateTime.parse(strDate);
 		
-		System.out.println(localDateTime);
+		System.out.println("localDateTime"+localDateTime);
+		
+		LocalDate now = LocalDate.now();
+		
+		String string1 = LocalDate.now().toString();
 		
 	}
 }

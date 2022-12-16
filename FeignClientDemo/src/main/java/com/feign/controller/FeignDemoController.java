@@ -16,11 +16,17 @@ public class FeignDemoController {
 	private FeignService feignServiceUtil;
 	
 	
-	@GetMapping("/username")
+	@GetMapping("/userName")
 	public String getUserName() {
 		
-		return feignServiceUtil.getName();
+		return feignServiceUtil.getName();	
 		
+	}
+	
+	@GetMapping("/userAddress")
+	public String getUserAddress() {
+		
+		return feignServiceUtil.getAddress();	
 		
 	}
 }
