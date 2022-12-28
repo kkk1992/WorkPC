@@ -7,7 +7,7 @@ import java.util.List;
 
 import org.springframework.web.multipart.MultipartFile;
 
-import com.crud.model.Product;
+import com.crud.entity.Product;
 
 public interface ProductService {
 

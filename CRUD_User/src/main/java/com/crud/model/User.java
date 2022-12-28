@@ -1,7 +1,6 @@
 package com.crud.model;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -15,7 +14,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
@@ -24,7 +22,6 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -51,14 +48,18 @@ public class User implements UserDetails{
 
 	
 	
-	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinTable(name="user_role"
-	, joinColumns = @JoinColumn(name = "userId", referencedColumnName = "id")
-,inverseJoinColumns = @JoinColumn(name="role", referencedColumnName ="id"))
+//	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+//	@JoinTable(name="user_role"
+//	, joinColumns = @JoinColumn(name = "userId", referencedColumnName = "userId")
+//,inverseJoinColumns = @JoinColumn(name="role", referencedColumnName ="id"))
+//	private Set<Role> roles = new HashSet<>();
+
+	@ManyToMany(cascade= CascadeType.ALL, fetch=FetchType.EAGER)
+	@JoinTable(name="user_role",
+	joinColumns =  @JoinColumn(name = "userId", referencedColumnName = "userId")
+    ,            inverseJoinColumns = @JoinColumn(name = "roleId", referencedColumnName = "id"))
+	private Set <Role> roles;
 	
-
-	private Set<Role> roles = new HashSet<>();
-
 //getter setter
 
 		@Override

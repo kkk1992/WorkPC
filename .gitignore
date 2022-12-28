@@ -243,3 +243,4 @@ README.html
 *.iml
 .idea
 .exercism
+pox.xml

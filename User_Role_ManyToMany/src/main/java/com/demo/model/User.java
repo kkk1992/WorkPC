@@ -50,6 +50,7 @@ public class User {
 	//@Pattern(regexp = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$")
 	private String password;
 	
+	
 	@ManyToMany(cascade= CascadeType.ALL, fetch=FetchType.EAGER)
 	@JoinTable(name="user_role",
 	joinColumns =  @JoinColumn(name = "userId", referencedColumnName = "userId")

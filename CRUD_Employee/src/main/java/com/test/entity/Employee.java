@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 @Entity
-@Table(name="employees")
+@Table(schema="abc",name="employees")
 
 public class Employee {
 
